@@ -10,6 +10,11 @@ namespace Exercise4
     {
         static void Main(string[] args)
         {
+            Console.Write("Input a name:");
+            String text;
+            text = Console.ReadLine();
+            Console.Write("Hola mundo {0}", text);
+            Console.ReadKey();
         }
     }
 }

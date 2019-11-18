@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Exercise4
 {
-    class SortPeople
+    class SortPeople : IComparer<string>
     {
+        public int Compare(string x, string y)
+        {
+            int @long = 0;
+            return @long;
+        }
     }
 }
