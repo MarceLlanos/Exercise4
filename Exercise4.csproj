@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IdComparer.cs" />
+    <Compile Include="LastNameComparer.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="PersonNameComparer.cs" />
+    <Compile Include="NameComparer.cs" />
+    <Compile Include="PersonPrinted.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

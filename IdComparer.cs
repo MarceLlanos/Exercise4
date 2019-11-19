@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Exercise4
 {
-    class Person
+    class IdComparer : IComparer<Person>
     {
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public int Id { get; set; }
+        public int Compare(Person x, Person y)
+        {
+            return x.Id - y.Id;
+        }
     }
 }
