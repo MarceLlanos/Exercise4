@@ -22,7 +22,7 @@ namespace Exercise4
             people.Add(new Person { Name = "Any", LastName = "Vargas" });
             people.Add(new Person { Name = "Carla", LastName = "Trigo" });
 
-            PersonComparer personComparer = new PersonComparer();
+            PersonNameComparer personComparer = new PersonNameComparer();
             people.Sort(personComparer);
             int i = 0;
             foreach (Person item in people)
