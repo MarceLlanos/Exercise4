@@ -8,8 +8,6 @@ namespace Exercise4
 {
     class PersonPrinted
     {
-
-        
         public void PrintPerson(List<Person> personCollection, string option)
         {
             int i = 0;
