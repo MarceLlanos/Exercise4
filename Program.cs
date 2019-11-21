@@ -1,67 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise4
 {
-    class Program
+    class MainClass
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var people = new List<Person>();
-            //TODO: Add a number of person within the list
-            people.Add(new Person { Name = "Ester", LastName = "Quiroga" , Id= 9 });
-            people.Add(new Person { Name = "Juan", LastName = "Reanult", Id =  10 });
-            people.Add(new Person { Name = "David", LastName = "Montanio", Id = 1 });
-            people.Add(new Person { Name = "Ivan", LastName = "Esparza", Id = 5 });
-            people.Add(new Person { Name = "Pedro", LastName = "Agno", Id = 3 });
-            people.Add(new Person { Name = "Karen", LastName = "Morales", Id = 3 });
-            people.Add(new Person { Name = "Veronica", LastName = "Jimenez", Id = 89 });
-            people.Add(new Person { Name = "Any", LastName = "Vargas", Id = 6 });
-            people.Add(new Person { Name = "Carla", LastName = "Trigo", Id = 4 });
-            people.Add(new Person { Name = "Isabel", LastName = "Lopez", Id = 7 });
+            people.Add(new Person { Name = "Karen", LastName = "Morales", Id = 3, Age = 27 });
+            people.Add(new Person { Name = "Geraldine", LastName = "Morales", Id = 3, Age = 27 });
+            people.Add(new Person { Name = "Karen", LastName = "Aguilar", Id = 3, Age = 27 });
+            people.Add(new Person { Name = "Juan", LastName = "Quispe", Id = 5, Age = 25 });
+            people.Add(new Person { Name = "Ivan", LastName = "Esparza", Id = 89, Age = 32 });
+            people.Add(new Person { Name = "Veronica", LastName = "Jimenez", Id = 43, Age = 28 });
+            people.Add(new Person { Name = "Pedro", LastName = "Lozada", Id = 2, Age = 23 });
+            people.Add(new Person { Name = "Natalia", LastName = "Magarinios", Id = 10, Age = 11 });
+            people.Add(new Person { Name = "Any", LastName = "Montanio", Id = 23, Age = 29 });
 
-            string option;
-            Console.WriteLine("For sort by Name write '1', sort by LastName '2', sort by Id '3'");
-            option = Console.ReadLine();
+            Console.WriteLine("MENU");
+            Console.WriteLine("1= By Name");
+            Console.WriteLine("2= By Lastname");
+            Console.WriteLine("3= By Age");
+            Console.WriteLine("4= By Id");
+            
+            string option = Console.ReadLine();
+            
+            Displayer displayer = new Displayer();
+            CompositeCreator compositeCreator = new CompositeCreator();
+            
+            people.Sort(compositeCreator.CreateComposite(option));
 
-            int i = 0;
-
-            if (option == "1")
-            {
-                NameComparer nameComparer = new NameComparer();
-                people.Sort(nameComparer);
-
-                foreach (Person item in people)
-                {
-                    i++;
-                    Console.WriteLine("Person {0}: {1} {2} {3}", i, item.Name, item.LastName, item.Id);
-                }
-            }
-            if ( option == "2")
-            {
-                LastNameComparer lastNameComparer = new LastNameComparer();
-                people.Sort(lastNameComparer);
-
-                foreach (Person item in people)
-                {
-                    i++;
-                    Console.WriteLine("Person {0}: {1} {2} {3}", i, item.Name, item.LastName, item.Id);
-                }
-            }
-            if( option == "3")
-            {
-                IdComparer idComparer = new IdComparer();
-                people.Sort(idComparer);
-
-                foreach (Person item in people)
-                {
-                    i++;
-                    Console.WriteLine("Person {0}: {1} {2} {3}", i, item.Name, item.LastName, item.Id);
-                }
-            }
+            displayer.Display(people);
 
             Console.ReadKey();
         }

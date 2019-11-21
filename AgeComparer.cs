@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Exercise4
 {
-    public class NameComparer: IComparer<Person>
+    class AgeComparer : IComparer<Person>
     {
-        public NameComparer()
-        {
-        }
-
         public int Compare(Person x, Person y)
         {
-            return string.Compare(x.Name, y.Name);
+            return x.Age - y.Age;
         }
     }
 }
