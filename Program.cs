@@ -32,7 +32,8 @@ namespace Exercise4
             people.Sort(compositeCreator.CreateComposite(option));
 
             displayer.Display(people);
-
+            
+            
             Console.ReadKey();
         }
     }
