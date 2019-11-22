@@ -12,8 +12,10 @@ namespace Exercise4
         public Composite CreateComposite(string option)
         {
             var options = option.Split(' ');
+
             ComparerCreator resultCompositeCreate = new ComparerCreator();
             Composite composite = new Composite();
+
             foreach (var item in options)
             {
                 composite.AddComparer(resultCompositeCreate.CreateComparer(item));

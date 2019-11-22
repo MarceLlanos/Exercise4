@@ -5,8 +5,6 @@ namespace Exercise4
 {
     class ComparerCreator: IComparerCreator
     {
-
-        
         public IComparer<Person> CreateComparer(string option)
         {
             switch (option)
@@ -21,7 +19,7 @@ namespace Exercise4
                     return new IdComparer();
                 default:
                     return new NameComparer(); ;
-            };
+            }
         }
     }
 }

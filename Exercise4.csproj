@@ -44,7 +44,14 @@
     <Compile Include="LastNameComparer.cs" />
     <Compile Include="IdComparer.cs" />
     <Compile Include="Displayer.cs" />
-    <Compile Include="SearcherComparer.cs" />
+    <Compile Include="NameFilter.cs" />
+    <Compile Include="LastnameFilter.cs" />
+    <Compile Include="AgeFilter.cs" />
+    <Compile Include="IdFilter.cs" />
+    <Compile Include="CompositeFilter.cs" />
+    <Compile Include="CompositeCreatorFilter.cs" />
+    <Compile Include="ICreatorFilter.cs" />
+    <Compile Include="FilterCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

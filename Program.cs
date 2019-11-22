@@ -8,7 +8,7 @@ namespace Exercise4
         public static void Main(string[] args)
         {
             var people = new List<Person>();
-            people.Add(new Person { Name = "Karen", LastName = "Morales", Id = 3, Age = 27 });
+            people.Add(new Person { Name = "Karen", LastName = "Morales", Id = 3, Age = 24 });
             people.Add(new Person { Name = "Geraldine", LastName = "Morales", Id = 3, Age = 27 });
             people.Add(new Person { Name = "Karen", LastName = "Aguilar", Id = 3, Age = 27 });
             people.Add(new Person { Name = "Juan", LastName = "Quispe", Id = 5, Age = 25 });
@@ -33,7 +33,19 @@ namespace Exercise4
 
             displayer.Display(people);
             
-            
+            Console.WriteLine("");
+            Console.WriteLine("SEARCH:");
+            Console.WriteLine("1= Name:");
+            Console.WriteLine("2= Lastname:");
+            Console.WriteLine("3= Age:");
+            Console.WriteLine("4= Id:");
+            string optionSearch = Console.ReadLine();
+            Console.Write("search word:");
+            string wordSearch = Console.ReadLine();
+
+            CompositeCreatorFilter filter = new CompositeCreatorFilter();
+
+            displayer.Display(people.Filtrar(filter.CreateFilterComposite(optionSearch, wordSearch)));
             Console.ReadKey();
         }
     }
