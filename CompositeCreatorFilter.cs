@@ -7,7 +7,6 @@ namespace Exercise4
         {
             var options = option.Split(' ');
             var searcher = searchWord.Split(' ');
-            Person person = new Person();
             
             FilterCreator resultFilterCreate = new FilterCreator();
             CompositeFilter compositeFilter = new CompositeFilter();
